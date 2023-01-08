@@ -1,7 +1,6 @@
 // create function to fetch data from chatgpt with axios and return the response by resolving a promise
 const axios = require('axios');
 
-//import dotenv
 require('dotenv').config();
 
 const getAnswerFromChatGPT = (question) => {

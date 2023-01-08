@@ -2,7 +2,7 @@
 const express = require("express");
 const cors = require("cors");
 
-dotenv.config();
+require("dotenv").config();
 
 //import the function to fetch data from chatgpt
 const { getAnswerFromChatGPT } = require("./api/chatgpt");
