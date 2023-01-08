@@ -11,7 +11,12 @@ const app = express();
 const port = process.env.PORT || 3001;
 
 // use cors
-app.use(cors());
+const corsOptions = {
+  origin: "https://eltonq15.github.io",
+  optionsSuccessStatus: 200,
+  methods: "GET",
+};
+app.use(cors(corsOptions));
 
 // create a route
 app.get("/recipe", async (req, res) => {
