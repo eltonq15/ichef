@@ -16,14 +16,14 @@ const getAnswerFromChatGPT = (question) => {
             data: {
                 "model": "text-davinci-002",
                 "prompt": question,
-                "max_tokens": 200,
+                "max_tokens": 250,
             },
           };
 
         axios(options)
         .then((response) => {
             let answer = response.data?.choices[0]?.text;
-            resolve(('<pre>' + answer + '</pre>')|| "Sorry, I don't know the answer to that question.");
+            resolve(answer || "Sorry, I don't know the answer to that question.");
         })
         .catch((error) => {
             reject(error);
