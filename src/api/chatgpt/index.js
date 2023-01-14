@@ -13,9 +13,9 @@ const getAnswerFromChatGPT = (question) => {
               'Authorization': "Bearer " + process.env.CHATGPT_API_KEY,
             },
             data: {
-                "model": "text-davinci-002",
+                "model": "text-davinci-003",
                 "prompt": question,
-                "max_tokens": 250,
+                "max_tokens": 450,
             },
           };
 
