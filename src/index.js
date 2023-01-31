@@ -10,7 +10,7 @@ const { getAnswerFromChatGPT } = require("./api/chatgpt");
 const app = express();
 const port = process.env.PORT || 3001;
 
-// use cors
+// use cors lib
 const corsOptions = {
   origin: "https://eltonq15.github.io",
   optionsSuccessStatus: 200,
