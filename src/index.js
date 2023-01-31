@@ -12,7 +12,7 @@ const port = process.env.PORT || 3001;
 
 // use cors lib
 const corsOptions = {
-  origin: "https://eltonq15.github.io",
+  origin: process.env.ALLOWED_ORIGIN,
   optionsSuccessStatus: 200,
   methods: "GET",
 };
