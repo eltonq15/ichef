@@ -25,7 +25,7 @@ app.get("/recipe", async (req, res) => {
     return res.status(403).send("Forbidden");
   }
   const { language, search } = req.query;
-  const query = `create a detailed recipe with title, ingredients, preparation mode, how much it yields, including only the ingredients or recipe name equal to  ${search}  in ${language} language and format it to html syntax, using tags h3, h4, br, p, ul or ol`;
+  const query = `create a detailed recipe with title, ingredients, preparation mode, how much it yields, including only the ingredients or recipe name equal to  ${search}  in ${language} language and format it to html syntax, using tags h3 for titles, h4 for subtitles, br, p, ul for ingredient list and ol for preparation instructions, and an icon related to the recipe, beside the title`;
   const response = await getAnswerFromChatGPT(query);
   res.send(response);
 });
