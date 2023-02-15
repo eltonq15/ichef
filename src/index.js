@@ -20,7 +20,13 @@ app.use(cors(corsOptions));
 
 // create a route
 app.get("/recipe", async (req, res) => {
-  const response = await getAnswerFromChatGPT(req.query.question);
+  // validate the origin
+  if (req.headers.origin !== process.env.ALLOWED_ORIGIN) {
+    return res.status(403).send("Forbidden");
+  }
+  const { language, search } = req.query;
+  const query = `create a detailed recipe with title, ingredients, preparation mode, how much it yields, including only the ingredients or recipe name equal to  ${search}  in ${language} language and format it to html syntax, using tags h3, h4, br, p, ul or ol`;
+  const response = await getAnswerFromChatGPT(query);
   res.send(response);
 });
 
